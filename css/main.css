@@ -1,0 +1,194 @@
+:root {
+  /*
+    --color-bg: #bebebe;
+    --color-bg-secondary: #ffffff;
+    --color-text: #000000;*/
+  --border-radius: 0.35rem;
+  --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  --color-bg: #bebebe;
+  --color-bg-secondary: #ffffff;
+  --color-text: #000000;
+  font-family: "Nunito sans", sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+body.dark-mode {
+  --color-bg: #2b3742;
+  --color-bg-secondary: #202e35;
+  --color-text: #ffffff;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.img-fluid {
+  width: 100%;
+}
+
+/*espaciados*/
+
+.my-2 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--color-bg-secondary);
+}
+
+.navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-dark-mode {
+  background-color: var(--color-bg-secondary);
+  opacity: 1;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  color: var(--color-text);
+  font-size: 15px;
+}
+
+.btn-dark-mode:hover {
+  opacity: 0.6;
+}
+
+/* Filtro */
+.filter-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-search {
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  background-color: var(--color-bg-secondary);
+  padding: 1rem;
+}
+
+.form-search i {
+  opacity: 0.5;
+  color: var(--color-text);
+}
+
+.form-search input {
+  border: none;
+  outline: none;
+  margin-left: 1rem;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text);
+  font-size: medium;
+}
+
+/* Main */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.5rem;
+}
+
+.card {
+  overflow: hidden;
+  background-color: var(--color-bg-secondary);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+
+.card img {
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h3 {
+  margin-bottom: 2rem;
+}
+
+/*-- Pais --*/
+
+header .btn-back {
+  border-radius: var(--border-radius);
+  background-color: var(--color-bg-secondary);
+  box-shadow: var(--box-shadow);
+  width: 5rem;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+main .grid-detail {
+  display: flex;
+  justify-content: center;
+}
+
+main .card-detalle {
+  background-color: var(--color-bg-secondary);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  width: 100%;
+  height: 50%;
+  padding: 5rem;
+}
+
+@media (max-width: 1000px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 750px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-content {
+    font-size: 0.6rem;
+  }
+
+  .filter-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .form-search {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .form-search input {
+    width: 85%;
+  }
+  .grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
